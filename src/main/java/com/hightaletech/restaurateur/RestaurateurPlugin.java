@@ -77,13 +77,21 @@ public class RestaurateurPlugin extends JavaPlugin {
     }
 
     private void registerComponents() {
-        this.exampleBlockComponentType = this.getChunkStoreRegistry().registerComponent(ExampleBlockComponent.class, "Example Block", ExampleBlockComponent.CODEC);
+        LOGGER.atInfo().log("Registering ExampleComponent: %s".formatted(exampleBlockComponentType));
+        this.exampleBlockComponentType = this.getChunkStoreRegistry().registerComponent(ExampleBlockComponent.class, "ExampleBlockComponent", ExampleBlockComponent.CODEC);
+        LOGGER.atInfo().log("ExampleComponent Registered: %s".formatted(exampleBlockComponentType));
     }
 
     @Override
     protected void start() {
         LOGGER.at(Level.INFO).log("[Restaurateur] Started!");
         LOGGER.at(Level.INFO).log("[Restaurateur] Use /res help for commands");
+        // Register Systems
+        registerSystems();
+    }
+
+    private void registerSystems() {
+        this.getChunkStoreRegistry().registerSystem(new ExampleRefSystem());
     }
 
     @Override
