@@ -1,0 +1,10 @@
+{
+  "groupId": "com.hightaletech",
+  "artifactId": "restaurateur",
+  "modName": "Restaurateur",
+  "version": "1.0.0",
+  "buildSystem": "Gradle",
+  "language": "Java",
+  "jarPath": "build/libs/restaurateur-1.0.0.jar",
+  "buildTask": "shadowJar"
+}

@@ -1,0 +1,10 @@
+{
+  "Group": "com.hightaletech",
+  "Name": "Restaurateur",
+  "Version": "1.0.0",
+  "Description": "A Hytale server mod",
+  "Authors": [{"Name": "techneosis"}],
+  "Main": "com.hightaletech.restaurateur.RestaurateurPlugin",
+  "LoadOrder": "POSTWORLD",
+  "IncludesAssetPack": true
+}
