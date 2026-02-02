@@ -1,5 +1,6 @@
 package com.hightaletech.restaurateur;
 
+import com.hypixel.hytale.component.ComponentType;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.event.EventRegistry;
@@ -18,6 +19,7 @@ public class RestaurateurPlugin extends JavaPlugin {
 
     private static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
     private static RestaurateurPlugin instance;
+    private ComponentType exampleBlockComponentType;
 
     public RestaurateurPlugin(@Nonnull JavaPluginInit init) {
         super(init);
@@ -41,6 +43,9 @@ public class RestaurateurPlugin extends JavaPlugin {
 
         // Register event listeners
         registerListeners();
+
+        // Register Components
+        registerComponents();
 
         LOGGER.at(Level.INFO).log("[Restaurateur] Setup complete!");
     }
@@ -71,6 +76,10 @@ public class RestaurateurPlugin extends JavaPlugin {
         }
     }
 
+    private void registerComponents() {
+        this.exampleBlockComponentType = this.getChunkStoreRegistry().registerComponent(ExampleBlockComponent.class, "Example Block", ExampleBlockComponent.CODEC);
+    }
+
     @Override
     protected void start() {
         LOGGER.at(Level.INFO).log("[Restaurateur] Started!");
@@ -81,5 +90,9 @@ public class RestaurateurPlugin extends JavaPlugin {
     protected void shutdown() {
         LOGGER.at(Level.INFO).log("[Restaurateur] Shutting down...");
         instance = null;
+    }
+
+    public ComponentType getExampleBlockComponentType() {
+        return this.exampleBlockComponentType;
     }
 }

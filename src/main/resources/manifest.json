@@ -6,5 +6,9 @@
   "Authors": [{"Name": "techneosis"}],
   "Main": "com.hightaletech.restaurateur.RestaurateurPlugin",
   "LoadOrder": "POSTWORLD",
-  "IncludesAssetPack": true
+  "IncludesAssetPack": true,
+  "Dependencies": {
+    "Hytale:EntityModule": "*",
+    "Hytale:BlockModule": "*"
+  }
 }
