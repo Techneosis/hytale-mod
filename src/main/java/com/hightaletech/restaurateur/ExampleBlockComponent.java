@@ -18,8 +18,9 @@ public class ExampleBlockComponent implements Component<ChunkStore> {
     }
 
     public void runBlockAction(int x, int y, int z, World world) {
+        LOGGER.atInfo().log("RUNNING BLOCK ACTION");
         world.execute(() -> {
-            world.setBlock(x + 1, y, z, "Rock_Ice");
+            world.setBlock(x, y + 1, z, "Rock_Ice");
         });
     }
 

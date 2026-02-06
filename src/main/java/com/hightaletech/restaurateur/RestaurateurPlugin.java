@@ -91,6 +91,7 @@ public class RestaurateurPlugin extends JavaPlugin {
     }
 
     private void registerSystems() {
+        this.getChunkStoreRegistry().registerSystem(new ExampleTickingSystem());
         this.getChunkStoreRegistry().registerSystem(new ExampleRefSystem());
     }
 
