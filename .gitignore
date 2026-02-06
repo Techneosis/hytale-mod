@@ -15,7 +15,15 @@ pom.xml.versionsBackup
 
 # Hytale
 libs/HytaleServer.jar
-server/
-server/mods/
-server/logs/
-server/world/
+
+# Ignore everything under server
+/server/*
+
+# But keep the mods directory itself
+!/server/mods/
+/server/mods/Hytale_Shop/
+
+
+# Unignore only com.hytaletech* mods
+!/server/mods/com.hytaletech*/
+!/server/mods/com.hytaletech*/**
