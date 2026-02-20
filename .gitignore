@@ -17,4 +17,4 @@ pom.xml.versionsBackup
 libs/HytaleServer.jar
 
 # Ignore everything under server
-/server
+/server/*
