@@ -2,6 +2,7 @@
   "Group": "com.hightaletech",
   "Name": "Restaurateur",
   "Version": "1.0.0",
+  "ServerVersion": "2026.02.19-1a311a592",
   "Description": "A Hytale server mod",
   "Authors": [{"Name": "techneosis"}],
   "Main": "com.hightaletech.restaurateur.RestaurateurPlugin",
