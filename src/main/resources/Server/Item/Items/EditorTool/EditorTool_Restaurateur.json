@@ -1,0 +1,32 @@
+{
+  "TranslationProperties": {
+    "Name": "server.builderTools.tools.Entity.name",
+    "Description": "server.builderTools.tools.Entity.description"
+  },
+  "Icon": "Icons/Items/EditorTools/Restaurateur.png",
+  "Categories": [
+    "Tool.BuilderTool"
+  ],
+  "Model": "Items/Tools/Brush/RestaurateurBrush.blockymodel",
+  "Texture": "Items/Tools/Brush/RestaurateurBrush_Texture.png",
+  "MaxStack": 1,
+  "PlayerAnimationsId": "Item",
+  "Interactions": {
+    "Primary": {
+      "Interactions": [
+        {
+          "Type": "UseRestaurateurToolInteraction"
+        }
+      ]
+    }
+  },
+  "InteractionConfig": {
+    "DebugOutlines": true,
+    "UseDistance": {
+      "Adventure": 128,
+      "Creative": 128
+    },
+    "AllEntities": true
+  },
+  "Quality": "Tool"
+}

@@ -73,14 +73,5 @@
       -13.5
     ]
   },
-  "Interactions": {
-    "Secondary": {
-      "Interactions": [
-        {
-          "Type": "UseRestaurateurToolInteraction"
-        }
-      ]
-    }
-  },
   "ItemSoundSetId": "ISS_Blocks_Stone"
 }
