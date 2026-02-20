@@ -11,6 +11,7 @@ import com.hightaletech.restaurateur.listeners.PlayerListener;
 
 import javax.annotation.Nonnull;
 import java.util.logging.Level;
+import com.hypixel.hytale.server.core.modules.interaction.interaction.config.Interaction;
 
 /**
  * Restaurateur - A Hytale server plugin.
@@ -46,6 +47,8 @@ public class RestaurateurPlugin extends JavaPlugin {
 
         // Register Components
         registerComponents();
+
+        getCodecRegistry(Interaction.CODEC).register("UseRestaurateurToolInteraction", UseRestaurateurToolInteraction.class, UseRestaurateurToolInteraction.CODEC);
 
         LOGGER.at(Level.INFO).log("[Restaurateur] Setup complete!");
     }
