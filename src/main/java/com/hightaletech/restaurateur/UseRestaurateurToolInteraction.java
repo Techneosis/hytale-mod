@@ -26,11 +26,16 @@ public class UseRestaurateurToolInteraction extends SimpleBlockInteraction {
     public static final HytaleLogger LOGGER = HytaleLogger.forEnclosingClass();
     public static final BuilderCodec<UseRestaurateurToolInteraction> CODEC = BuilderCodec.builder(UseRestaurateurToolInteraction.class, UseRestaurateurToolInteraction::new, SimpleInteraction.CODEC).build();
 
+    protected Vector3i selectedLocation;
+
     public UseRestaurateurToolInteraction(){ }
 
     @Override
-    protected void interactWithBlock(@NonNullDecl World var1, @NonNullDecl CommandBuffer<EntityStore> var2, @NonNullDecl InteractionType var3, @NonNullDecl InteractionContext var4, @NullableDecl ItemStack var5, @NonNullDecl Vector3i var6, @NonNullDecl CooldownHandler var7) {
-        LOGGER.atInfo().log("Interact With Block");
+    protected void interactWithBlock(@NonNullDecl World world, @NonNullDecl CommandBuffer<EntityStore> cmd, @NonNullDecl InteractionType type, @NonNullDecl InteractionContext ctx, @NullableDecl ItemStack stack, @NonNullDecl Vector3i coord, @NonNullDecl CooldownHandler cooldown) {
+        if (type == InteractionType.Secondary) {
+            LOGGER.atInfo().log("Interacted With Block, replacing %s with %s".formatted(selectedLocation, coord));
+            selectedLocation = coord;
+        }
     }
 
     @Override
@@ -40,7 +45,7 @@ public class UseRestaurateurToolInteraction extends SimpleBlockInteraction {
 
     @Override
     protected void tick0(boolean firstRun, float time, @NonNullDecl InteractionType type, @NonNullDecl InteractionContext context, @NonNullDecl CooldownHandler cooldownHandler) {
-//        super.tick0(firstRun, time, type, context, cooldownHandler);
+        super.tick0(firstRun, time, type, context, cooldownHandler);
         if(!firstRun) {
             context.getState().state = InteractionState.Finished;
             return;

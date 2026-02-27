@@ -18,6 +18,13 @@
           "Type": "UseRestaurateurToolInteraction"
         }
       ]
+    },
+    "Secondary": {
+      "Interactions": [
+        {
+          "Type": "UseRestaurateurToolInteraction"
+        }
+      ]
     }
   },
   "InteractionConfig": {
